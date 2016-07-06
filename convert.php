@@ -1,4 +1,18 @@
 <?php
+/**
+ * This file converts "content" "to" the desired format (hdf5 or json)
+ * The output format is json that contains hdf5 data base64 encoded or json data as part of the output array:
+ * Example (to = hdf5):
+ * {
+ *   content: "iUhERg0KGgoAAAAAAAgIAAQAEAAAAAAAAAAAAAAAAAD\/\/\/\/\/\/\/\/\/\/zCEAAAAAAAA...AAAAAAAAAAAAAAAAAAA",
+ *   error: null
+ * }
+ * Example (to = json):
+ * {
+ *   content: {"id": "NoID", shape: [5,10], ..., data: [[0,1,15]]},
+ *   error: null
+ * }
+ */
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 $to = isset($_REQUEST["to"]) ? $_REQUEST["to"] : false;
 $content = isset($_REQUEST["content"]) ? $_REQUEST["content"] : false;
