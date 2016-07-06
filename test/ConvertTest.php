@@ -1,5 +1,7 @@
 <?php
 
+namespace test;
+
 class ConvertTest extends \PHPUnit_Framework_TestCase
 {
     public function testConvertWithMissingParameters()
