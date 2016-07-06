@@ -1,0 +1,12 @@
+* biom-conversion-server
+A simple php server that can convert [[http://biom-format.org/documentation/format_versions/biom-2.0.html][biom version 2 (hdf5)]] files and data to [[http://biom-format.org/documentation/format_versions/biom-1.0.html][biom version 1 (json)]] and vice versa.
+It simply provides a REST interface to the convert feature of the [[http://biom-format.org/index.html#installing-the-biom-format-python-package][official python biom format tool]].
+This project is not part of the official biom project.
+
+Please cite the original biom project as:
+
+#+BEGIN_SRC
+The Biological Observation Matrix (BIOM) format or: how I learned to stop worrying and love the ome-ome.
+Daniel McDonald, Jose C. Clemente, Justin Kuczynski, Jai Ram Rideout, Jesse Stombaugh, Doug Wendel, Andreas Wilke, Susan Huse, John Hufnagle, Folker Meyer, Rob Knight, and J. Gregory Caporaso.
+GigaScience 2012, 1:7. doi:10.1186/2047-217X-1-7
+#+END_SRC
