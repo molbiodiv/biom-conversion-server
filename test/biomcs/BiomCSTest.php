@@ -21,6 +21,7 @@ class BiomCSTest extends \PHPUnit_Framework_TestCase
         // Test for conversion of biom content in HDF5 format
         $results = $biomcs->convertToJSON(file_get_contents(__DIR__ . '/../files/simpleBiom.hdf5'));
         $results_obj = json_decode($results, true);
-        $this->assertEquals("None", $results_obj["id"]);
+        // var_dump($results_obj);
+        $this->assertEquals("b'No Table ID'", $results_obj["id"]);
     }
 }
