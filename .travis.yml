@@ -11,7 +11,8 @@ before_install:
   - conda update --yes conda
 
 install:
-  - conda install --file explicit-conda-spec.txt
+  - conda create --name biomcs --file explicit-conda-spec.txt
+  - source activate biomcs
   - composer install
 
 script:
