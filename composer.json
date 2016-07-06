@@ -1,0 +1,12 @@
+{
+    "name": "iimog/biom-conversion-server",
+    "description": "Conversion tool for the biom format",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Markus Ankenbrand",
+            "email": "markus.ankenbrand@uni-wuerzburg.de"
+        }
+    ],
+    "require": {}
+}
