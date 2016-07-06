@@ -2,8 +2,6 @@
 
 namespace biomcs;
 
-use Symfony\Component\Config\Definition\Exception\Exception;
-
 class BiomCSTest extends \PHPUnit_Framework_TestCase
 {
     public function testConvertToJSON()
