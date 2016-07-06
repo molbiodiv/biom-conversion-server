@@ -49,6 +49,6 @@ class BiomCSTest extends \PHPUnit_Framework_TestCase
         $results = $biomcs->convertToHDF5(file_get_contents(__DIR__ . '/../files/simpleBiom.json'));
         // var_dump($results_obj);
         $this->assertEquals(137, ord(substr($results, 0, 1)));
-        $this->assertEquals("HDF", substr($results,1,3));
+        $this->assertEquals("HDF", substr($results, 1, 3));
     }
 }
