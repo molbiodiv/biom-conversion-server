@@ -36,16 +36,13 @@ class BiomCS
     private function executeBiomCommand($parameter, $content)
     {
         $tempFile = tempnam(sys_get_temp_dir(), 'biomcs');
-        $writeFile = file_put_contents($tempFile, $content);
-        if ($writeFile === false) {
-            throw new \Exception("Could not write temporary file for conversion.");
-        }
+        file_put_contents($tempFile, $content);
         $result = array();
         $errorCode = 0;
         exec('biom convert -i '.escapeshellarg($tempFile).
                 ' -o '.escapeshellarg($tempFile).'.out '.escapeshellarg($parameter), $result, $errorCode);
         if ($errorCode !== 0) {
-            throw new \Exception("Could not execute biom command: ".$result." ".$errorCode);
+            throw new \Exception("Error executing biom command: ".$result." ".$errorCode);
         }
         return file_get_contents($tempFile.".out");
     }
