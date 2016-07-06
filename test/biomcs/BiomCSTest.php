@@ -2,6 +2,8 @@
 
 namespace biomcs;
 
+use Symfony\Component\Config\Definition\Exception\Exception;
+
 class BiomCSTest extends \PHPUnit_Framework_TestCase
 {
     public function testConvertToJSON()
@@ -32,7 +34,7 @@ class BiomCSTest extends \PHPUnit_Framework_TestCase
     public function testConvertToHDF5()
     {
         $biomcs = new BiomCS();
-        // Test for conversion of a simple biom file in HDF5 format
+        // Test for conversion of a simple biom file in json format
         $_FILES = array(
             array(
                 'name' => 'simpleBiom.json',
@@ -50,5 +52,13 @@ class BiomCSTest extends \PHPUnit_Framework_TestCase
         // var_dump($results_obj);
         $this->assertEquals(137, ord(substr($results, 0, 1)));
         $this->assertEquals("HDF", substr($results, 1, 3));
+    }
+
+    public function testEmptyStringException()
+    {
+        $biomcs = new BiomCS();
+        // Test for conversion of an empty string (Should raise an exception)
+        $this->expectException(\Exception::class);
+        $results = $biomcs->convertToHDF5("");
     }
 }

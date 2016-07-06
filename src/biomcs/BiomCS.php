@@ -40,9 +40,9 @@ class BiomCS
         $result = array();
         $errorCode = 0;
         exec('biom convert -i '.escapeshellarg($tempFile).
-                ' -o '.escapeshellarg($tempFile).'.out '.escapeshellarg($parameter), $result, $errorCode);
+                ' -o '.escapeshellarg($tempFile).'.out '.escapeshellarg($parameter)." 2>&1", $result, $errorCode);
         if ($errorCode !== 0) {
-            throw new \Exception("Error executing biom command: ".$result." ".$errorCode);
+            throw new \Exception("Error executing biom command: ".implode("\n", $result)." ".$errorCode);
         }
         return file_get_contents($tempFile.".out");
     }
