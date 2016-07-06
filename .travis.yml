@@ -18,4 +18,4 @@ script:
 
 after_success:
   - travis_retry vendor/bin/coveralls
-  - travis_retry vendor/bin/test-reporter
+  - travis_retry vendor/bin/test-reporter --coverage-report=test/cover/coverage.xml
