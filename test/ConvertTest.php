@@ -26,4 +26,11 @@ class ConvertTest extends \PHPUnit_Framework_TestCase
         $this->expectOutputRegex("/.*Biological Observation Matrix 1.0.0.*/");
         require __DIR__.'/../convert.php';
     }
+    public function testConvertToHDF5()
+    {
+        $_REQUEST['to'] = 'hdf5';
+        $_REQUEST['content'] = file_get_contents(__DIR__ . '/files/simpleBiom.json');
+        $this->expectOutputRegex("/\"error\": null/");
+        require __DIR__.'/../convert.php';
+    }
 }

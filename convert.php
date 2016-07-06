@@ -9,6 +9,9 @@ if(!$to || !$content){
 } else {
     $biomcs = new \biomcs\BiomCS();
     if($to === "json"){
-        print $biomcs->convertToJSON($content);
+        print json_encode(array("content" => json_decode($biomcs->convertToJSON($content), true), "error" => null), JSON_PRETTY_PRINT);
+    } elseif($to === "hdf5"){
+        var_dump($content);
+        print json_encode(array("content" => base64_encode($biomcs->convertToHDF5($content)), "error" => null), JSON_PRETTY_PRINT);
     }
 }
