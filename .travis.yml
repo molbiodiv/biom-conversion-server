@@ -17,4 +17,4 @@ script:
   - phpunit
 
 after_success:
-  - travis_retry vendor/bin/coveralls
+  - travis_retry vendor/bin/coveralls -x test/cover/coverage.xml
