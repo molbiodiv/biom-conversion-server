@@ -7,17 +7,6 @@ class BiomCSTest extends \PHPUnit_Framework_TestCase
     public function testConvertToJSON()
     {
         $biomcs = new BiomCS();
-        // Test for conversion of a simple biom file in HDF5 format
-        $_FILES = array(
-            array(
-                'name' => 'simpleBiom.hdf5',
-                'type' => 'application/octet-stream',
-                'size' => 33840,
-                'tmp_name' => __DIR__ . '/../files/simpleBiom.hdf5',
-                'error' => 0
-            )
-        );
-
         // Test for conversion of biom content in HDF5 format
         $results = $biomcs->convertToJSON(file_get_contents(__DIR__ . '/../files/simpleBiom.hdf5'));
         $results_obj = json_decode($results, true);
@@ -32,17 +21,6 @@ class BiomCSTest extends \PHPUnit_Framework_TestCase
     public function testConvertToHDF5()
     {
         $biomcs = new BiomCS();
-        // Test for conversion of a simple biom file in json format
-        $_FILES = array(
-            array(
-                'name' => 'simpleBiom.json',
-                'type' => 'text/plain',
-                'size' => 1067,
-                'tmp_name' => __DIR__ . '/../files/simpleBiom.json',
-                'error' => 0
-            )
-        );
-
         // Test for conversion of biom content in json format
         // Only the file format HDF5 is checked by inspecting the first four bytes
         // this is by no means a sufficient but only a necessary condition for correctness
