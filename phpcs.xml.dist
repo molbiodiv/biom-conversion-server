@@ -2,6 +2,7 @@
 <ruleset name="PHP_CodeSniffer">
  <description>The coding standard for biom-conversion-server.</description>
 
+ <file>convert.php</file>
  <file>src</file>
  <file>test</file>
 
