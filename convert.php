@@ -33,7 +33,6 @@ if (!$to) {
             JSON_PRETTY_PRINT
         );
     } elseif ($to === "hdf5") {
-        var_dump($content);
         print json_encode(
             array(
                 "content" => base64_encode($biomcs->convertToHDF5($content)),
