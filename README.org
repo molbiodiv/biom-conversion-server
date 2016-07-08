@@ -16,6 +16,7 @@ GigaScience 2012, 1:7. doi:10.1186/2047-217X-1-7
 | Build Status  | [[https://travis-ci.org/iimog/biom-conversion-server][https://travis-ci.org/iimog/biom-conversion-server.svg?branch=master]]                   |
 | Test Coverage | [[https://coveralls.io/github/iimog/biom-conversion-server?branch=master][https://coveralls.io/repos/github/iimog/biom-conversion-server/badge.svg?branch=master]] |
 | Code Climate  | [[https://codeclimate.com/github/iimog/biom-conversion-server][https://codeclimate.com/github/iimog/biom-conversion-server/badges/gpa.svg]]             |
+| Docker        | [[https://hub.docker.com/r/iimog/biom-conversion-server/][http://dockeri.co/image/iimog/biom-conversion-server]]                                   |
 
 ** Changes
 *** 0.1.0 <2016-07-08 Fr>
