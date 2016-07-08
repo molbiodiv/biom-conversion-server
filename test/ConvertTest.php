@@ -4,11 +4,14 @@ namespace test;
 
 class ConvertTest extends \PHPUnit_Framework_TestCase
 {
-    public function testConvertWithMissingParameters()
+    public function testConvertWithMissingTo()
     {
         $_REQUEST['content'] = 'bla';
         $this->expectOutputRegex("/.*Missing parameter.*/");
-        require __DIR__.'/../convert.php';
+        require __DIR__ . '/../convert.php';
+    }
+    public function testConvertWithMissingContent()
+    {
         unset($_REQUEST['content']);
         $_REQUEST['to'] = 'json';
         $this->expectOutputRegex("/.*Missing parameter.*/");
@@ -33,6 +36,13 @@ class ConvertTest extends \PHPUnit_Framework_TestCase
         $_REQUEST['to'] = 'hdf5';
         $_REQUEST['content'] = file_get_contents(__DIR__ . '/files/simpleBiom.json');
         $this->expectOutputRegex("/\"error\": null/");
+        require __DIR__.'/../convert.php';
+    }
+    public function testConvertFail()
+    {
+        $_REQUEST['to'] = 'hdf5';
+        $_REQUEST['content'] = "bla";
+        $this->expectOutputRegex("/does not appear to be a BIOM file/");
         require __DIR__.'/../convert.php';
     }
 }
