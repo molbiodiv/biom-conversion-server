@@ -44,7 +44,9 @@ class BiomCS
         unlink($tempFile);
         if ($errorCode !== 0) {
             if(file_exists($tempFile.".out")){
+                // @codeCoverageIgnoreStart
                 unlink($tempFile.".out");
+                // @codeCoverageIgnoreEnd
             }
             throw new \Exception("Error executing biom command: ".implode("\n", $result)." ".$errorCode);
         }
