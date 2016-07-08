@@ -11,6 +11,7 @@ Daniel McDonald, Jose C. Clemente, Justin Kuczynski, Jai Ram Rideout, Jesse Stom
 GigaScience 2012, 1:7. doi:10.1186/2047-217X-1-7
 #+END_SRC
 
+| Cite Project  | [[https://zenodo.org/badge/latestdoi/12731/iimog/biom-conversion-server][https://zenodo.org/badge/12731/iimog/biom-conversion-server.svg]]                        |
 | License       | [[file:LICENSE][https://img.shields.io/github/license/mashape/apistatus.svg]]                            |
 | Build Status  | [[https://travis-ci.org/iimog/biom-conversion-server][https://travis-ci.org/iimog/biom-conversion-server.svg?branch=master]]                   |
 | Test Coverage | [[https://coveralls.io/github/iimog/biom-conversion-server?branch=master][https://coveralls.io/repos/github/iimog/biom-conversion-server/badge.svg?branch=master]] |
