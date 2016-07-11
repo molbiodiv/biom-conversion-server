@@ -43,7 +43,7 @@ class BiomCS
                 ' -o '.escapeshellarg($tempFile).'.out '.escapeshellarg($parameter)." 2>&1", $result, $errorCode);
         unlink($tempFile);
         if ($errorCode !== 0) {
-            if(file_exists($tempFile.".out")){
+            if (file_exists($tempFile.".out")) {
                 // @codeCoverageIgnoreStart
                 unlink($tempFile.".out");
                 // @codeCoverageIgnoreEnd

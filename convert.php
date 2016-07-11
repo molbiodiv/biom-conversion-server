@@ -1,4 +1,7 @@
 <?php
+
+namespace biomcs;
+
 /**
  * This file converts "content" "to" the desired format (hdf5 or json)
  * The output format is json that contains hdf5 data base64 encoded or json data as part of the output array:
@@ -13,6 +16,10 @@
  *   error: null
  * }
  */
+
+// Allow CORS
+header("Access-Control-Allow-Origin: *");
+
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 $to = isset($_REQUEST["to"]) ? $_REQUEST["to"] : false;
 $content = isset($_REQUEST["content"]) ? $_REQUEST["content"] : false;
@@ -23,8 +30,8 @@ if (!$to) {
 } elseif (!$content) {
     echo json_encode(array("error" => "Missing parameter 'content' please send the content to convert"));
 } else {
-    $biomcs = new \biomcs\BiomCS();
-    try{
+    $biomcs = new BiomCS();
+    try {
         if ($to === "json") {
             echo json_encode(
                 array(
@@ -42,7 +49,7 @@ if (!$to) {
                 JSON_PRETTY_PRINT
             );
         }
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
         echo json_encode(array("error" => $e->getMessage()), JSON_PRETTY_PRINT);
     }
 }
