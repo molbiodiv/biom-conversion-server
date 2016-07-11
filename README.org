@@ -19,6 +19,9 @@ GigaScience 2012, 1:7. doi:10.1186/2047-217X-1-7
 | Docker        | [[https://hub.docker.com/r/iimog/biom-conversion-server/][http://dockeri.co/image/iimog/biom-conversion-server]]                                   |
 
 ** Changes
+*** 0.2.0
+ - require content as base64 encoded string
+ - allow CORS requests
 *** 0.1.0 <2016-07-08 Fr>
  - convert to json
  - convert to hdf5
