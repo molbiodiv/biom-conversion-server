@@ -29,21 +29,21 @@ class ConvertTest extends \PHPUnit_Framework_TestCase
     public function testConvertToJSON()
     {
         $_REQUEST['to'] = 'json';
-        $_REQUEST['content'] = file_get_contents(__DIR__ . '/files/simpleBiom.hdf5');
+        $_REQUEST['content'] = base64_encode(file_get_contents(__DIR__ . '/files/simpleBiom.hdf5'));
         $this->expectOutputRegex("/.*Biological Observation Matrix 1.0.0.*/");
         require __DIR__.'/../convert.php';
     }
     public function testConvertToHDF5()
     {
         $_REQUEST['to'] = 'hdf5';
-        $_REQUEST['content'] = file_get_contents(__DIR__ . '/files/simpleBiom.json');
+        $_REQUEST['content'] = base64_encode(file_get_contents(__DIR__ . '/files/simpleBiom.json'));
         $this->expectOutputRegex("/\"error\": null/");
         require __DIR__.'/../convert.php';
     }
     public function testConvertFail()
     {
         $_REQUEST['to'] = 'hdf5';
-        $_REQUEST['content'] = "bla";
+        $_REQUEST['content'] = base64_encode("bla");
         $this->expectOutputRegex("/does not appear to be a BIOM file/");
         require __DIR__.'/../convert.php';
     }
