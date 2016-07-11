@@ -31,7 +31,7 @@ if (!$to) {
         if ($to === "json") {
             echo json_encode(
                 array(
-                    "content" => json_decode($biomcs->convertToJSON($content), true),
+                    "content" => base64_encode($biomcs->convertToJSON($content)),
                     "error" => null
                 ),
                 JSON_PRETTY_PRINT
