@@ -14,6 +14,7 @@ namespace biomcs;
 
 // Allow CORS
 header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json");
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 // load json data into $_REQUEST if content type is application/json
