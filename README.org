@@ -3,7 +3,7 @@ A simple php server that can convert [[http://biom-format.org/documentation/form
 It simply provides a REST interface to the convert feature of the [[http://biom-format.org/index.html#installing-the-biom-format-python-package][official python biom format tool]].
 This project is not part of the official biom project.
 
-Please cite the original biom project as:
+Please cite the original biom project in addition to this project as:
 
 #+BEGIN_SRC
 The Biological Observation Matrix (BIOM) format or: how I learned to stop worrying and love the ome-ome.
@@ -17,6 +17,16 @@ GigaScience 2012, 1:7. doi:10.1186/2047-217X-1-7
 | Test Coverage | [[https://coveralls.io/github/iimog/biom-conversion-server?branch=master][https://coveralls.io/repos/github/iimog/biom-conversion-server/badge.svg?branch=master]] |
 | Code Climate  | [[https://codeclimate.com/github/iimog/biom-conversion-server][https://codeclimate.com/github/iimog/biom-conversion-server/badges/gpa.svg]]             |
 | Docker        | [[https://hub.docker.com/r/iimog/biom-conversion-server/][http://dockeri.co/image/iimog/biom-conversion-server]]                                   |
+
+** Getting started
+To run your own conversion server on localhost port 8080 using the docker container execute the following commands:
+#+BEGIN_SRC sh
+docker pull iimog/biom-conversion-server
+# Use any other port by exchanging 8080 with your desired port number
+docker run -d --publish 8080:80 --name biomcs biom-conversion-server
+#+END_SRC
+Now you can visit your conversion server in the browser at http://localhost:8080/
+And you can point tools that use the conversion api as a webservice to http://localhost:8080/convert.php (e.g. [[https://github.com/iimog/biojs-io-biom][biojs-io-biom]]).
 
 ** Changes
 *** 0.2.0
