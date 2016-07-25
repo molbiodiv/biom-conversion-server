@@ -16,6 +16,10 @@ namespace biomcs;
 header("Access-Control-Allow-Origin: *");
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+// load json data into $_REQUEST if content type is application/json
+if($_SERVER["CONTENT_TYPE"] === 'application/json'){
+    $_REQUEST = json_decode(file_get_contents('php://input'), true);
+}
 $to = isset($_REQUEST["to"]) ? $_REQUEST["to"] : false;
 $content = isset($_REQUEST["content"]) ? $_REQUEST["content"] : false;
 $content = base64_decode($content);
