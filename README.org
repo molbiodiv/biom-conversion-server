@@ -29,6 +29,10 @@ Now you can visit your conversion server in the browser at http://localhost:8080
 And you can point tools that use the conversion api as a webservice to http://localhost:8080/convert.php (e.g. [[https://github.com/iimog/biojs-io-biom][biojs-io-biom]]).
 
 ** Changes
+*** 0.3.0
+ - Use biojs-io-biom for UI
+ - Add UI to start page (file upload/download)
+ - Increase php server limits
 *** 0.2.0
  - returned content is base64 encoded string
  - require content as base64 encoded string
