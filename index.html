@@ -11,18 +11,31 @@
 <body>
 <script src="bower_components/file-saver/FileSaver.min.js"></script>
 <script src="bower_components/biojs-io-biom/build/biom.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <h1>Welcome to the biom conversion server</h1>
 To use the API call convert.php with parameters "to" and "content".
 Parameter "to" can be "json" or "hdf5" while parameter "content" is the content of the file to convert in base64 encoding.
 
 This server is used by the <a href="https://github.com/iimog/biojs-io-biom">biojs-io-biom module</a>.
 Try the interplay of this conversion server and the biojs module:
-<input type="file" id="input" onchange="loadBiomFile(this.files)">
+<label class="btn btn-default btn-file">
+    Browse <input type="file" style="display: none;" id="input" onchange="loadBiomFile(this.files)">
+</label>
 <div id="bootstrap-message-area"></div>
+<button type="button" class="btn btn-default download-button" aria-label="Left Align" id="v1button">
+    Version 1 (json)
+</button>
+<button type="button" class="btn btn-default download-button" aria-label="Left Align" id="v2button">
+    Version 2 (hdf5)
+</button>
 
 <script type="text/javascript">
     var Biom = require('biojs-io-biom').Biom;
     var currentBiom = null;
+    var filename;
 
     function bootstrapAlert(message, type){
         if(typeof type === 'undefined'){
@@ -34,17 +47,11 @@ Try the interplay of this conversion server and the biojs module:
     function loadBiomFile(files){
         var reader = new FileReader();
         reader.onload = function(c) {
-            var filename = $('#input').val();
+            filename = $('#input').val();
             Biom.parse('', {conversionServer: 'convert.php', arrayBuffer: c.target.result}).then(
                     function(biom){
                         currentBiom = biom;
                         bootstrapAlert('Success: <strong>'+filename+'</strong> could be interpreted as biom. Continue with the conversion.','success');
-                        // biom.write().then(
-//                        biom.write({conversionServer: "http://localhost:8080/convert.php", asHdf5: true}).then(
-//                                function(success){
-//                                    saveAs(new Blob([success], {type: "application/octet-stream"}), "myBiomExport.hdf5", true);
-//                                }
-//                        )
                     },
                     function(fail){
                         bootstrapAlert('Fail: <strong>'+filename+'</strong> could not be interpreted as biom: '+fail.message,'danger');
@@ -54,11 +61,22 @@ Try the interplay of this conversion server and the biojs module:
         };
         reader.readAsArrayBuffer(files[0]);
     }
+
+    $('document').ready(function(){
+        console.log($('.download-button'));
+        $('.download-button').on('click', function(event){
+            asHdf5 = (this.id === 'v2button');
+            currentBiom.write({conversionServer: "http://localhost:8080/convert.php", asHdf5: true}).then(
+                function(success){
+                    saveAs(new Blob([success], {type: "application/octet-stream"}), "myBiomExport.hdf5", true);
+                }
+                , function (fail) {
+                    bootstrapAlert('Fail: <strong>'+filename+'</strong> could not be interpreted as biom: '+fail.message,'danger');
+                }
+            );
+        });
+    });
 </script>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
