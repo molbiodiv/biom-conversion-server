@@ -17,6 +17,7 @@ RUN apt-get update && apt-get --assume-yes install \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install bower
+RUN ln -s /usr/bin/nodejs /usr/bin/node
 RUN npm install -g bower
 
 # Prepare apache
@@ -36,7 +37,7 @@ RUN echo "export LANG=C.UTF-8" >>/etc/apache2/envvars
 RUN git clone https://github.com/iimog/biom-conversion-server.git /var/www/html
 RUN cd /var/www/html && conda install --yes --file explicit-conda-spec.txt
 RUN cd /var/www/html && composer install
-RUN cd /var/www/html && bower install
+RUN cd /var/www/html && bower install --allow-root
 
 # Add custom php ini
 ADD php.ini /etc/php/7.0/apache2/php.ini
