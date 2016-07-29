@@ -38,4 +38,7 @@ RUN cd /var/www/html && conda install --yes --file explicit-conda-spec.txt
 RUN cd /var/www/html && composer install
 RUN cd /var/www/html && bower install
 
+# Add custom php ini
+ADD php.ini /etc/php/7.0/apache2/php.ini
+
 CMD service apache2 start; while true; do sleep 60; done
