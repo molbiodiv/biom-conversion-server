@@ -65,10 +65,10 @@ Try the interplay of this conversion server and the biojs module:
     $('document').ready(function(){
         console.log($('.download-button'));
         $('.download-button').on('click', function(event){
-            asHdf5 = (this.id === 'v2button');
-            currentBiom.write({conversionServer: "http://localhost:8080/convert.php", asHdf5: true}).then(
+            var asHdf5 = (this.id === 'v2button');
+            currentBiom.write({conversionServer: "convert.php", asHdf5: asHdf5}).then(
                 function(success){
-                    saveAs(new Blob([success], {type: "application/octet-stream"}), "myBiomExport.hdf5", true);
+                    saveAs(new Blob([success], {type: "application/octet-stream"}), filename + (asHdf5 ? ".hdf5" : ".json"), true);
                 }
                 , function (fail) {
                     bootstrapAlert('Fail: <strong>'+filename+'</strong> could not be interpreted as biom: '+fail.message,'danger');
