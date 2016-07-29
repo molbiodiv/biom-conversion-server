@@ -1,0 +1,24 @@
+{
+  "name": "biom-conversion-server",
+  "homepage": "https://github.com/iimog/biom-conversion-server",
+  "authors": [
+    "Markus Ankenbrand <markus@ankenbrand.me>"
+  ],
+  "description": "Convert between biom version 1 and version 2",
+  "main": "",
+  "keywords": [
+    "biom",
+    "converter",
+    "hdf5",
+    "json",
+    "biom-format"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
