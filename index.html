@@ -15,22 +15,28 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<h1>Welcome to the biom conversion server</h1>
-To use the API call convert.php with parameters "to" and "content".
-Parameter "to" can be "json" or "hdf5" while parameter "content" is the content of the file to convert in base64 encoding.
+<div class="container">
+    <h1>Welcome to the biom conversion server</h1>
+    <p>
+    To use the API call convert.php with parameters "to" and "content".<br>
+    Parameter "to" can be "json" or "hdf5" while parameter "content" is the content of the file to convert in base64 encoding.
+    </p>
 
-This server is used by the <a href="https://github.com/iimog/biojs-io-biom">biojs-io-biom module</a>.
-Try the interplay of this conversion server and the biojs module:
-<label class="btn btn-default btn-file">
-    Browse <input type="file" style="display: none;" id="input" onchange="loadBiomFile(this.files)">
-</label>
-<div id="bootstrap-message-area"></div>
-<button type="button" class="btn btn-default download-button" aria-label="Left Align" id="v1button">
-    Version 1 (json)
-</button>
-<button type="button" class="btn btn-default download-button" aria-label="Left Align" id="v2button">
-    Version 2 (hdf5)
-</button>
+    <p>
+    This server is used by the <a href="https://github.com/iimog/biojs-io-biom">biojs-io-biom module</a>.
+    Try the interplay of this conversion server and the biojs module:
+    </p>
+    <label class="btn btn-default btn-file">
+        Browse <input type="file" style="display: none;" id="input" onchange="loadBiomFile(this.files)">
+    </label>
+    <div id="bootstrap-message-area"></div>
+    <button type="button" class="btn btn-default download-button" aria-label="Left Align" id="v1button" style="display: none;">
+        Version 1 (json)
+    </button>
+    <button type="button" class="btn btn-default download-button" aria-label="Left Align" id="v2button" style="display: none;">
+        Version 2 (hdf5)
+    </button>
+</div>
 
 <script type="text/javascript">
     var Biom = require('biojs-io-biom').Biom;
@@ -52,10 +58,12 @@ Try the interplay of this conversion server and the biojs module:
                     function(biom){
                         currentBiom = biom;
                         bootstrapAlert('Success: <strong>'+filename+'</strong> could be interpreted as biom. Continue with the conversion.','success');
+                        $('.download-button').show();
                     },
                     function(fail){
                         bootstrapAlert('Fail: <strong>'+filename+'</strong> could not be interpreted as biom: '+fail.message,'danger');
                         console.log(fail);
+                        $('.download-button').hide();
                     }
             );
         };
