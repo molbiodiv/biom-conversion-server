@@ -18,13 +18,18 @@ Parameter "to" can be "json" or "hdf5" while parameter "content" is the content 
 This server is used by the <a href="https://github.com/iimog/biojs-io-biom">biojs-io-biom module</a>.
 Try the interplay of this conversion server and the biojs module:
 <input type="file" id="input" onchange="loadBiomFile(this.files)">
-<div class="alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <strong>Warning!</strong> Better check yourself, you're not looking too good.
-</div>
+<div id="bootstrap-message-area"></div>
+
 <script type="text/javascript">
     var Biom = require('biojs-io-biom').Biom;
     var currentBiom = null;
+
+    function bootstrapAlert(message, type){
+        if(typeof type === 'undefined'){
+            type = 'info';
+        }
+        $('#bootstrap-message-area').append($('<div class="alert alert-'+type+' alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> '+message+'</div>'));
+    }
 
     function loadBiomFile(files){
         var reader = new FileReader();
