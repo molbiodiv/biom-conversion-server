@@ -1,9 +1,57 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BiomCS - biom conversion server</title>
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<script src="bower_components/file-saver/FileSaver.min.js"></script>
+<script src="bower_components/biojs-io-biom/build/biom.min.js"></script>
 <h1>Welcome to the biom conversion server</h1>
-Please call convert.php with parameters "to" and "content"
+To use the API call convert.php with parameters "to" and "content".
+Parameter "to" can be "json" or "hdf5" while parameter "content" is the content of the file to convert in base64 encoding.
+
+This server is used by the <a href="https://github.com/iimog/biojs-io-biom">biojs-io-biom module</a>.
+Try the interplay of this conversion server and the biojs module:
+<input type="file" id="input" onchange="loadBiomFile(this.files)">
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+</div>
+<script type="text/javascript">
+    var Biom = require('biojs-io-biom').Biom;
+    var currentBiom = null;
+
+    function loadBiomFile(files){
+        var reader = new FileReader();
+        reader.onload = function(c) {
+            Biom.parse('', {conversionServer: 'convert.php', arrayBuffer: c.target.result}).then(
+                    function(biom){
+                        currentBiom = biom;
+                        console.log(biom);
+                        // biom.write().then(
+                        biom.write({conversionServer: "http://localhost:8080/convert.php", asHdf5: true}).then(
+                                function(success){
+                                    saveAs(new Blob([success], {type: "application/octet-stream"}), "myBiomExport.hdf5", true);
+                                }
+                        )
+                    },
+                    function(fail){
+                        console.log(fail);
+                    }
+            );
+        };
+        reader.readAsArrayBuffer(files[0]);
+    }
+</script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
