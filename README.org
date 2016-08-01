@@ -23,7 +23,7 @@ To run your own conversion server on localhost port 8080 using the docker contai
 #+BEGIN_SRC sh
 docker pull iimog/biom-conversion-server
 # Use any other port by exchanging 8080 with your desired port number
-docker run -d --publish 8080:80 --name biomcs biom-conversion-server
+docker run -d --publish 8080:80 --name biomcs iimog/biom-conversion-server
 #+END_SRC
 Now you can visit your conversion server in the browser at http://localhost:8080/
 And you can point tools that use the conversion api as a webservice to http://localhost:8080/convert.php (e.g. [[https://github.com/iimog/biojs-io-biom][biojs-io-biom]]).
