@@ -17,11 +17,11 @@ Please cite the original biom project in addition to this project as:
     GigaScience 2012, 1:7. doi:10.1186/2047-217X-1-7
 
   --------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------
- - Cite Project    [![Zenodo](https://zenodo.org/badge/12731/iimog/biom-conversion-server.svg)](https://zenodo.org/badge/latestdoi/12731/iimog/biom-conversion-server)
+ - Cite Project    [![Zenodo](https://zenodo.org/badge/12731/iimog/biom-conversion-server.svg)](https://zenodo.org/badge/latestdoi/12731/iimog/biom-conversion-server) (last release under iimog/biom-conversion-server)
  - License         [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](file:LICENSE)
- - Build Status    [![Travis](https://travis-ci.org/iimog/biom-conversion-server.svg?branch=master)](https://travis-ci.org/iimog/biom-conversion-server)
- - Test Coverage   [![Coveralls](https://coveralls.io/repos/github/iimog/biom-conversion-server/badge.svg?branch=master)](https://coveralls.io/github/iimog/biom-conversion-server?branch=master)
- - Code Climate    [![CodeClimate](https://codeclimate.com/github/iimog/biom-conversion-server/badges/gpa.svg)](https://codeclimate.com/github/iimog/biom-conversion-server)
+ - Build Status    [![Travis](https://travis-ci.org/molbiodiv/biom-conversion-server.svg?branch=master)](https://travis-ci.org/molbiodiv/biom-conversion-server)
+ - Test Coverage   [![Coveralls](https://coveralls.io/repos/github/molbiodiv/biom-conversion-server/badge.svg?branch=master)](https://coveralls.io/github/molbiodiv/biom-conversion-server?branch=master)
+ - Code Climate    [![CodeClimate](https://codeclimate.com/github/molbiodiv/biom-conversion-server/badges/gpa.svg)](https://codeclimate.com/github/molbiodiv/biom-conversion-server)
  - Docker          [![DockerPulls](https://img.shields.io/docker/pulls/iimog/biom-conversion-server.svg?maxAge=2592000)](https://hub.docker.com/r/iimog/biom-conversion-server/)
   --------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ docker run -d --publish 8080:80 --name biomcs iimog/biom-conversion-server
 Now you can visit your conversion server in the browser at
 <http://localhost:8080/> And you can point tools that use the conversion
 api as a webservice to <http://localhost:8080/convert.php> (e.g.
-[biojs-io-biom](https://github.com/iimog/biojs-io-biom)).
+[biojs-io-biom](https://github.com/molbiodiv/biojs-io-biom)).
 
 Changes
 -------

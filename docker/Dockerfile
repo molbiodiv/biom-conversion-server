@@ -34,7 +34,7 @@ RUN echo "export LC_ALL=C.UTF-8" >>/etc/apache2/envvars
 RUN echo "export LANG=C.UTF-8" >>/etc/apache2/envvars
 
 # Clone git repo
-RUN git clone https://github.com/iimog/biom-conversion-server.git /var/www/html
+RUN git clone https://github.com/molbiodiv/biom-conversion-server.git /var/www/html
 RUN cd /var/www/html && conda install --yes --file explicit-conda-spec.txt
 RUN cd /var/www/html && composer install
 RUN cd /var/www/html && bower install --allow-root
