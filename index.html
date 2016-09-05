@@ -50,7 +50,8 @@
         var div = $('<div class="alert alert-'+type+' alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> '+message+'</div>');
         $('#bootstrap-message-area').append(div);
         if(typeof details !== 'undefined'){
-            div.append($(' <button type="button" class="btn btn-"'+type+' data-toggle="collapse" data-target="#demo">Details</button><div id="demo" class="collapse">'+details+'</div>'))
+            var unique_id = 'collapse-'+Date.now();
+            div.append($(' <button type="button" class="btn btn-"'+type+' data-toggle="collapse" data-target="#"'+unique_id+'>Details</button><div id="'+unique_id+'" class="collapse">'+details+'</div>'))
         }
     }
 
