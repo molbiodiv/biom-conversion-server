@@ -43,14 +43,14 @@
     var currentBiom = null;
     var filename;
 
-    function bootstrapAlert(message, type, optional){
+    function bootstrapAlert(message, type, details){
         if(typeof type === 'undefined'){
             type = 'info';
         }
         var div = $('<div class="alert alert-'+type+' alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> '+message+'</div>');
         $('#bootstrap-message-area').append(div);
-        if(typeof optional !== 'undefined'){
-            div.append($(' <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Details</button><div id="demo" class="collapse">'+optional+'</div>'))
+        if(typeof details !== 'undefined'){
+            div.append($(' <button type="button" class="btn btn-"'+type+' data-toggle="collapse" data-target="#demo">Details</button><div id="demo" class="collapse">'+details+'</div>'))
         }
     }
 
