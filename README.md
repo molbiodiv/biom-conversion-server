@@ -46,6 +46,10 @@ api as a webservice to <http://localhost:8080/convert.php> (e.g.
 Changes
 -------
 
+### 1.0.0 (TBD)
+
+-   Add details to error messages
+
 ### 0.3.0 (2016-07-29)
 
 -   Use biojs-io-biom for UI
