@@ -65,7 +65,7 @@
                         $('.download-button').show();
                     },
                     function(fail){
-                        bootstrapAlert('Fail: <strong>'+filename+'</strong> could not be interpreted as biom: '+fail.message,'danger');
+                        bootstrapAlert('Fail: <strong>'+filename+'</strong> could not be interpreted as biom: ','danger', fail.message);
                         console.log(fail);
                         $('.download-button').hide();
                     }
