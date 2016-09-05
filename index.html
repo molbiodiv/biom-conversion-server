@@ -51,7 +51,7 @@
         $('#bootstrap-message-area').append(div);
         if(typeof details !== 'undefined'){
             var unique_id = 'collapse-'+Date.now();
-            div.append($(' <button type="button" class="btn btn-"'+type+' data-toggle="collapse" data-target="#"'+unique_id+'>Details</button><div id="'+unique_id+'" class="collapse">'+details+'</div>'))
+            div.append($(' <button type="button" class="btn btn-'+type+'" data-toggle="collapse" data-target="#'+unique_id+'">Details</button><div id="'+unique_id+'" class="collapse">'+details+'</div>'))
         }
     }
 
