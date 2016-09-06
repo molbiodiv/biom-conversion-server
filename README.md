@@ -46,7 +46,7 @@ api as a webservice to <http://localhost:8080/convert.php> (e.g.
 Changes
 -------
 
-### 1.0.0 (TBD)
+### 0.4.0 (2016-09-06)
 
 -   Add details to error messages
 
