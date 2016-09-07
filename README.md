@@ -16,9 +16,11 @@ Please cite the original biom project in addition to this project as:
     Daniel McDonald, Jose C. Clemente, Justin Kuczynski, Jai Ram Rideout, Jesse Stombaugh, Doug Wendel, Andreas Wilke, Susan Huse, John Hufnagle, Folker Meyer, Rob Knight, and J. Gregory Caporaso.
     GigaScience 2012, 1:7. doi:10.1186/2047-217X-1-7
 
+A public instance of the server is running at [https://biomcs.iimog.org](https://biomcs.iimog.org)
+
   --------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------
  - Cite Project    [![Zenodo](https://zenodo.org/badge/12731/molbiodiv/biom-conversion-server.svg)](https://zenodo.org/badge/latestdoi/12731/molbiodiv/biom-conversion-server)
- - License         [![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](file:LICENSE)
+ - License         [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](file:LICENSE)
  - Build Status    [![Travis](https://travis-ci.org/molbiodiv/biom-conversion-server.svg?branch=master)](https://travis-ci.org/molbiodiv/biom-conversion-server)
  - Test Coverage   [![Coveralls](https://coveralls.io/repos/github/molbiodiv/biom-conversion-server/badge.svg?branch=master)](https://coveralls.io/github/molbiodiv/biom-conversion-server?branch=master)
  - Code Climate    [![CodeClimate](https://codeclimate.com/github/molbiodiv/biom-conversion-server/badges/gpa.svg)](https://codeclimate.com/github/molbiodiv/biom-conversion-server)
