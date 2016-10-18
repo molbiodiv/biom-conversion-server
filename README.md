@@ -5,7 +5,7 @@ A simple php server that can convert [biom version 2
 (hdf5)](http://biom-format.org/documentation/format_versions/biom-2.0.html)
 files and data to [biom version 1
 (json)](http://biom-format.org/documentation/format_versions/biom-1.0.html)
-and vice versa. It simply provides a REST interface to the convert
+and vice versa. It simply provides a web and API interface to the convert
 feature of the [official python biom format
 tool](http://biom-format.org/index.html#installing-the-biom-format-python-package).
 This project is not part of the official biom project.
