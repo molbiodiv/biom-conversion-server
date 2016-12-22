@@ -27,7 +27,7 @@ RUN rm -rf /var/www/html
 RUN echo "export TERM=xterm" >>/root/.bashrc
 
 # Install biom via conda
-RUN curl -sS http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh >miniconda.sh
+RUN curl -sS https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh >miniconda.sh
 RUN chmod +x miniconda.sh
 RUN ./miniconda.sh -b -f -p /usr/local
 RUN echo "export LC_ALL=C.UTF-8" >>/etc/apache2/envvars
