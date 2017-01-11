@@ -10,6 +10,14 @@ feature of the [official python biom format
 tool](http://biom-format.org/index.html#installing-the-biom-format-python-package).
 This project is not part of the official biom project.
 
+Please cite our article at f1000 Research that describes this module:
+```
+Markus J. Ankenbrand, Niklas Terhoeven, Sonja Hohlfeld, Frank Förster, and Alexander Keller.
+biojs-io-biom, a BioJS component for handling data in Biological Observation Matrix (BIOM) format[version 2; referees: 1 approved, 2 approved with reservations].
+F1000Research 2017, 5:2348. doi: 10.12688/f1000research.9618.2
+```
+You can cite the current version of this software repository using the Zenodo [![Zenodo](https://zenodo.org/badge/12731/molbiodiv/biom-conversion-server.svg)](https://zenodo.org/badge/latestdoi/12731/molbiodiv/biom-conversion-server)
+
 Please cite the original biom project in addition to this project as:
 
     The Biological Observation Matrix (BIOM) format or: how I learned to stop worrying and love the ome-ome.
@@ -19,7 +27,7 @@ Please cite the original biom project in addition to this project as:
 A public instance of the server is running at [https://biomcs.iimog.org](https://biomcs.iimog.org)
 
   --------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------
- - Cite Project    [![Zenodo](https://zenodo.org/badge/12731/molbiodiv/biom-conversion-server.svg)](https://zenodo.org/badge/latestdoi/12731/molbiodiv/biom-conversion-server)
+ - Cite Project    [![DOI](https://img.shields.io/badge/DOI-10.12688%2Ff1000research.9618.2-blue.svg)](https://dx.doi.org/10.12688/f1000research.9618.2) and [![Zenodo](https://zenodo.org/badge/12731/molbiodiv/biom-conversion-server.svg)](https://zenodo.org/badge/latestdoi/12731/molbiodiv/biom-conversion-server)
  - License         [![MIT](https://img.shields.io/badge/License-MIT-blue.svg)](file:LICENSE)
  - Build Status    [![Travis](https://travis-ci.org/molbiodiv/biom-conversion-server.svg?branch=master)](https://travis-ci.org/molbiodiv/biom-conversion-server)
  - Test Coverage   [![Coveralls](https://coveralls.io/repos/github/molbiodiv/biom-conversion-server/badge.svg?branch=master)](https://coveralls.io/github/molbiodiv/biom-conversion-server?branch=master)
