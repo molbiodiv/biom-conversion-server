@@ -56,6 +56,10 @@ api as a webservice to <http://localhost:8080/convert.php> (e.g.
 Changes
 -------
 
+### 1.0.3 (2017-03-29)
+
+-   Update of biojs-io-biom to version 1.0.7
+
 ### 1.0.2 (2016-12-22)
 
 -   Fix docker image
