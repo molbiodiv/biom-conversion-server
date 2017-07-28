@@ -4,7 +4,7 @@ namespace test;
 
 require_once __DIR__.'/overload_header_function.php';
 
-class ConvertTest extends \PHPUnit_Framework_TestCase
+class ConvertTest extends \PHPUnit\Framework\TestCase
 {
     public function testConvertWithMissingTo()
     {

@@ -4,7 +4,7 @@ namespace biomcs;
 
 require_once __DIR__.'/../overload_header_function.php';
 
-class BiomCSTest extends \PHPUnit_Framework_TestCase
+class BiomCSTest extends \PHPUnit\Framework\TestCase
 {
     public function testConvertToJSON()
     {
