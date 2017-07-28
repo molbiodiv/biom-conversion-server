@@ -2,3 +2,4 @@
 .idea/
 test/cover
 bower_components
+node_modules/
