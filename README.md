@@ -56,6 +56,12 @@ api as a webservice to <http://localhost:8080/convert.php> (e.g.
 Changes
 -------
 
+### 1.0.4 (2017-07-28)
+
+-   Switch from bower to yarn
+-   Update dependencies
+-   Update of biojs-io-biom to version 1.0.9
+
 ### 1.0.3 (2017-03-29)
 
 -   Update of biojs-io-biom to version 1.0.7
