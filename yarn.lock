@@ -43,9 +43,9 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-biojs-io-biom@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/biojs-io-biom/-/biojs-io-biom-1.0.8.tgz#2a8ce4cec9239919804ce0cf69d33869a12ff7f5"
+biojs-io-biom@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/biojs-io-biom/-/biojs-io-biom-1.0.9.tgz#30970b80cf49933d35a759bb97e0a0ca1bd3e4c8"
   dependencies:
     base64-js "^1.2.0"
     lodash "^4.16.6"
