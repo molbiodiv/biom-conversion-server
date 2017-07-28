@@ -20,12 +20,11 @@ header("Content-Type: application/json");
 
 require_once __DIR__ . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 // explicitly set CONTENT_TYPE if empty (required for testing)
-if(empty($_SERVER['CONTENT_TYPE']))
-{
+if (empty($_SERVER['CONTENT_TYPE'])) {
     $_SERVER['CONTENT_TYPE'] = "application/x-www-form-urlencoded";
 }
 // load json data into $_REQUEST if content type is application/json
-if($_SERVER["CONTENT_TYPE"] === 'application/json'){
+if ($_SERVER["CONTENT_TYPE"] === 'application/json') {
     $_REQUEST = json_decode(file_get_contents('php://input'), true);
 }
 $to = isset($_REQUEST["to"]) ? $_REQUEST["to"] : false;

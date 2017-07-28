@@ -18,7 +18,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Install bower
 RUN ln -s /usr/bin/nodejs /usr/bin/node
-RUN npm install -g bower
+RUN npm install -g yarn
 
 # Prepare apache
 RUN rm -rf /var/www/html
@@ -37,7 +37,7 @@ RUN echo "export LANG=C.UTF-8" >>/etc/apache2/envvars
 RUN git clone https://github.com/molbiodiv/biom-conversion-server.git /var/www/html
 RUN cd /var/www/html && conda install --yes --file explicit-conda-spec.txt
 RUN cd /var/www/html && composer install
-RUN cd /var/www/html && bower install --allow-root
+RUN cd /var/www/html && yarn install
 
 # Add custom php ini
 ADD php.ini /etc/php/7.0/apache2/php.ini
