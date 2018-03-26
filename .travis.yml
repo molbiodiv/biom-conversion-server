@@ -14,7 +14,6 @@ before_install:
   - conda info -a
 
 install:
-  - conda install python=3.5
   - conda create -q -n biomcs --file explicit-conda-spec.txt
   - source activate biomcs
   - composer install
