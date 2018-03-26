@@ -8,6 +8,7 @@ RUN apt-get update && apt-get --assume-yes install \
     curl \
     php-dev \
     php-curl \
+    php-mbstring \
     libapache2-mod-php \
     zip \
     nodejs \
