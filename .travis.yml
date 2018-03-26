@@ -14,8 +14,9 @@ before_install:
   - conda info -a
 
 install:
-  - conda create -q -n biomcs --file explicit-conda-spec.txt
+  - conda create -n biomcs python=3.6
   - source activate biomcs
+  - conda install -c bioconda biom-format=2.1.6
   - composer install
 
 script:
