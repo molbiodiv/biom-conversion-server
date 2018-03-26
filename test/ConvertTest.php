@@ -30,7 +30,7 @@ class ConvertTest extends \PHPUnit\Framework\TestCase
     {
         $_REQUEST['to'] = 'json';
         $_REQUEST['content'] = base64_encode(file_get_contents(__DIR__ . '/files/simpleBiom.hdf5'));
-        $this->expectOutputRegex("/.*eyJpZCI6ICJiJ05vIFRhYmxlIE.*/");
+        $this->expectOutputRegex("/.*eyJpZCI6ICJObyBUYWJsZSBJRCIsImZ.*/");
         require __DIR__.'/../convert.php';
     }
     public function testConvertToHDF5()
