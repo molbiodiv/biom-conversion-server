@@ -56,6 +56,10 @@ api as a webservice to <http://localhost:8080/convert.php> (e.g.
 Changes
 -------
 
+### 1.0.5 (2018-03-27)
+
+-   Update biom-format to version 2.1.6
+
 ### 1.0.4 (2017-07-28)
 
 -   Switch from bower to yarn

@@ -1,4 +1,5 @@
 FROM ubuntu:16.04
+ARG BRANCH=master
 
 # Install required packages
 RUN apt-get update && apt-get --assume-yes install \
@@ -8,6 +9,7 @@ RUN apt-get update && apt-get --assume-yes install \
     curl \
     php-dev \
     php-curl \
+    php-mbstring \
     libapache2-mod-php \
     zip \
     nodejs \
@@ -32,10 +34,10 @@ RUN chmod +x miniconda.sh
 RUN ./miniconda.sh -b -f -p /usr/local
 RUN echo "export LC_ALL=C.UTF-8" >>/etc/apache2/envvars
 RUN echo "export LANG=C.UTF-8" >>/etc/apache2/envvars
+RUN conda install --yes -c bioconda biom-format=2.1.6
 
 # Clone git repo
-RUN git clone https://github.com/molbiodiv/biom-conversion-server.git /var/www/html
-RUN cd /var/www/html && conda install --yes --file explicit-conda-spec.txt
+RUN git clone --branch ${BRANCH} https://github.com/molbiodiv/biom-conversion-server.git /var/www/html
 RUN cd /var/www/html && composer install
 RUN cd /var/www/html && yarn install
 
