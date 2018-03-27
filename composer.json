@@ -1,6 +1,7 @@
 {
     "name": "iimog/biom-conversion-server",
     "description": "Conversion tool for the biom format",
+    "version": "1.0.5",
     "license": "MIT",
     "authors": [
         {
