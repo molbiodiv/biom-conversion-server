@@ -56,6 +56,11 @@ api as a webservice to <http://localhost:8080/convert.php> (e.g.
 Changes
 -------
 
+### 1.0.6 (2018-10-04)
+
+-   Update node version in docker container
+-   Update required bootstrap version (CVE-2018-14041)
+
 ### 1.0.5 (2018-03-27)
 
 -   Update biom-format to version 2.1.6

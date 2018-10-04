@@ -11,15 +11,18 @@ RUN apt-get update && apt-get --assume-yes install \
     php-curl \
     php-mbstring \
     libapache2-mod-php \
-    zip \
-    nodejs \
-    npm
+    zip
+
+# Add node ppa
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+
+RUN apt-get update && apt-get --assume-yes install \
+    nodejs
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install bower
-RUN ln -s /usr/bin/nodejs /usr/bin/node
+# Install yarn
 RUN npm install -g yarn
 
 # Prepare apache
